@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lesson JS</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fruktur&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <img src="https://i.pinimg.com/600x315/37/57/18/375718e29f50bd66ef611671d0b375dd.jpg" style='position:absolute;width:1905px;height:953px;margin:0;'>
+    <style media="screen">
+      body, html{
+        overflow: hidden;
+        height:100%;
+        background-color: green;
+      }
+      ul {
+        position: absolute;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-weight: bold;
+        font-size: 50xp;
+        border-radius: 10px;
+        }
+        li {
+        float: left;
+        }
+
+        li{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: 'Fira Sans', sans-serif;
+        }
+        p{
+          font-size: 50px;
+        }
+        .hud {
+        text-align: center;
+        }
+        .hud ul {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            /* For IE, the outcast */
+            zoom:1;
+            *display: inline;
+        }
+        .hud li {
+            float: left;
+            padding: 2px 5px;
+            border: 1px solid black;
+        }
+        #score_container{
+          font-size: 50px;
+          text-decoration: none;
+          font-family: 'Fira Sans', sans-serif;
+          color: white;
+          font-weight: bold;
+          z-index: 99999999999999;
+        }
+        #game_{
+          display:none;
+        }
+        #font_logo{
+          font-family: 'Fruktur', cursive;
+          font-size: 200px;
+          color:white;
+          text-shadow: 5px 0 red, 0 5px red, 5px 0 purple, 0 -5px purple;
+        }
+        #logo{
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          transform:rotate(-5deg);
+          animation: anim_logo 2s;
+          animation-timing-function: cubic-bezier(0, 0.9, 0.9, 1.01);
+        }
+        #press_text{
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          margin-top: 25%;
+          font-family: 'Fira Sans', sans-serif;
+          color:white;
+          font-weight: bolder;
+          animation: anim_press_text 2s infinite;
+        }
+        @keyframes anim_logo{
+          0%{
+            margin-top:-30%;
+          }
+          100%{
+            margin-top:0%;
+          }
+        }
+        @keyframes anim_press_text {
+          0%{
+            opacity:1;
+          }
+          25%{
+            opacity:0;
+          }
+
+          50%{
+            opacity: 1;
+          }
+          75%{
+            opacity: 0;
+          }
+          100%{
+            opacity: 1;
+          }
+        }
+        @keyframes welcome_close{
+          0%{
+            opacity:1;
+          }
+          100%{
+            opacity:0;
+          }
+        }
+    </style>
+    <div id='welcome_cont'>
+      <div id='logo' style='position:absolute;'><p id='font_logo'>EatDash</p></div>
+      <div id='press_text'><p>Press Left && Down && Up && Right</p></div>
+    </div>
+    <div id="game_">
+      <div id='cube' style='width:50px;height:50px;background-color:blue;position:absolute;text-align:center;'></div>
+      <div id='enemy'></div>
+      <div id='hud' style='z-index:999999999;position: absolute;margin-left: 43%;'>
+        <center>
+          <div id='score_container'>
+              <div class='score_text'>Score</div>
+              <div class='score_text' id='score' style='margin-top:-60px;margin-left:170px;'></div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src='jquery-3.4.1.js'></script>
+  <script type="text/javascript" src='scripts.js'></script>
+</html>
